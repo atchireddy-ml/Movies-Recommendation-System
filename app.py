@@ -13,7 +13,6 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
 
 
 BASE_DIR = Path(__file__).parent
@@ -25,7 +24,7 @@ WIKI_API_URL = "https://en.wikipedia.org/w/api.php"
 HEADERS = {"User-Agent": "MovieRecommenderApp/1.0 (student project)"}
 
 # >>> Paste your TMDB API key between the quotes below <<<
-TMDB_API_KEY = os.getenv("API_KEY")
+TMDB_API_KEY = st.secrets["API_KEY"]
 
 st.set_page_config(page_title="Movie Recommender", page_icon="🎬", layout="centered")
 
