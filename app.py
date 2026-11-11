@@ -10,6 +10,11 @@ import pandas as pd
 import requests
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 BASE_DIR = Path(__file__).parent
 TMDB_BASE = "https://api.themoviedb.org/3"
@@ -20,7 +25,7 @@ WIKI_API_URL = "https://en.wikipedia.org/w/api.php"
 HEADERS = {"User-Agent": "MovieRecommenderApp/1.0 (student project)"}
 
 # >>> Paste your TMDB API key between the quotes below <<<
-TMDB_API_KEY = "2ecff80a2c84cc0e89bc1b56cd3a0a8d"
+TMDB_API_KEY = os.getenv("API_KEY")
 
 st.set_page_config(page_title="Movie Recommender", page_icon="🎬", layout="centered")
 
